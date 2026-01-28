@@ -31,7 +31,7 @@ heart-disease-detection/
 │   ├── models.py                     
 │   └── visualizations.py             
 ├── app/
-│   └── HDD-DEPLOY.py               
+│   └── app.py               
 ├── models/
 │   └── best_model.pkl               
 ├── requirements.txt                  
