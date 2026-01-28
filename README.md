@@ -10,7 +10,7 @@ This project aims to predict the presence of heart disease using clinical featur
 
 **Notebook:** `notebooks/01_heart_disease_analysis.ipynb`
 
-**Dashboard:** Streamlit app in `app/HDD-DEPLOY.py`  
+**Dashboard:** Streamlit app in `app/app.py`  
 
 ---
 
@@ -27,7 +27,7 @@ heart-disease-detection/
 │   ├── models.py                     
 │   └── visualizations.py             
 ├── app/
-│   └── HDD-DEPLOY.py               
+│   └── app.py               
 ├── models/
 │   └── best_model.pkl               
 ├── requirements.txt                  
@@ -51,7 +51,7 @@ pip install -r requirements.txt
 4. Open the notebook:
 
 ```bash
-jupyter notebook notebooks/HDD - Portfolio.ipynb
+jupyter notebook notebooks/01_heart_disease_analysis.ipynb
 ```
 
 5. Follow the notebook cells step by step.
