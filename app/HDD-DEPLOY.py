@@ -26,10 +26,10 @@ This interactive app allows you to:
 # 1️⃣ Load Data
 # ===============================
 @st.cache_data
-def load_data(path):
-    data = pd.read_csv(path)
+def load_data():
+    url = "https://github.com/miloszgroch/Heart-Disease-Detection/blob/main/Data/heart.csv"
+    data = pd.read_csv(url)
     return data
-
 data = load_data(r'C:\Users\mgroch\OneDrive - Interpublic\Desktop\Other\HDD\heart.csv')
 
 st.subheader("Dataset Preview")
@@ -158,3 +158,4 @@ prob = rf_model.predict_proba(input_df)[0,1]
 
 st.write(f"Prediction: {'Heart Disease' if prediction[0]==1 else 'No Heart Disease'}")
 st.write(f"Probability: {prob:.2f}")
+
