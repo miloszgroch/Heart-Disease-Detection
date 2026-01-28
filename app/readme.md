@@ -22,12 +22,20 @@ Models used:
 
 heart-disease-detection/
 ├── data/
-│   └── heart.csv
+│   └── heart.csv                    
 ├── notebooks/
-│   └── 01_heart_disease_analysis.ipynb
-├── app.py
-├── requirements.txt
-└── README.md
+│   └── 01_heart_disease_analysis.ipynb  
+├── src/
+│   ├── data.py                       
+│   ├── models.py                     
+│   └── visualizations.py             
+├── app/
+│   └── HDD-DEPLOY.py               
+├── models/
+│   └── best_model.pkl               
+├── requirements.txt                  
+├── README.md
+└── .gitignore
 
 ---
 
