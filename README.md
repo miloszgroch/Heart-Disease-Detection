@@ -51,7 +51,7 @@ pip install -r requirements.txt
 4. Open the notebook:
 
 ```bash
-jupyter notebook notebooks/01_heart_disease_analysis.ipynb
+jupyter notebook notebooks/HDD - Portfolio.ipynb
 ```
 
 5. Follow the notebook cells step by step.
