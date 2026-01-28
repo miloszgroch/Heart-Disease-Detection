@@ -20,6 +20,7 @@ Models used:
 
 ## Project Structure
 
+```
 heart-disease-detection/
 ├── data/
 │   └── heart.csv                    
@@ -37,7 +38,7 @@ heart-disease-detection/
 ├── README.md
 └── .gitignore
 
----
+```
 
 ## Notebook
 
