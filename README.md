@@ -56,6 +56,34 @@ jupyter notebook notebooks/HDD - Portfolio.ipynb
 
 5. Follow the notebook cells step by step.
 
+## Streamlit Web Application
+
+An interactive Streamlit application is included to present the project results
+in a user-friendly way.
+
+Features:
+- Dataset preview and statistics
+- Correlation heatmap
+- Model training and evaluation
+- Feature importance visualization
+- ROC curve comparison
+- Interactive heart disease prediction for a new patient
+
+## How to Run the App
+
+1. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+2. Run the Streamlit app:
+```bash
+streamlit run app.py
+```
+
+3. Open your browser at:
+http://localhost:8501
+
 ---
 
 ## Key Steps in Notebook/Dashboard
