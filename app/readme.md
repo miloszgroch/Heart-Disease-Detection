@@ -45,6 +45,7 @@ To run the notebook:
 
 ```bash
 jupyter notebook notebooks/01_heart_disease_analysis.ipynb
+```
 
 ## Streamlit Web Application
 
@@ -64,10 +65,12 @@ Features:
 1. Install dependencies:
 ```bash
 pip install -r requirements.txt
+```
 
 2. Run the Streamlit app:
 ```bash
 streamlit run app.py
+```
 
 3. Open your browser at:
 http://localhost:8501
