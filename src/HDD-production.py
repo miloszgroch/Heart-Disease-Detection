@@ -122,6 +122,7 @@ def plot_feature_importance(model, feature_names: list, model_name: str) -> None
             plt.title(f"Feature importance: {model_name}")
             plt.tight_layout()
             plt.savefig(f"feature_importance_{model_name}.png")
+            mlflow.log_artifact(f"feature_importance_{model_name}.png")
             plt.close()
         else:
             logging.warning(f"Model {model_name} is not using feature_importances_.")
