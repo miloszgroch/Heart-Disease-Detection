@@ -11,7 +11,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
 from sklearn.metrics import classification_report, accuracy_score
 
-# Konfiguracja logowania
+# Log Config
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
@@ -38,7 +38,7 @@ def perform_eda(data: pd.DataFrame) -> None:
     print("\n Korelacje (top 10):\n", numerical_data.corr().abs().unstack()
           .sort_values(ascending=False).drop_duplicates().head(10))
 
-    # Heatmapa korelacji
+    # Correlation heatmap
     plt.figure(figsize=(12, 8))
     sns.heatmap(numerical_data.corr(), annot=False, cmap="coolwarm")
     plt.title("Macierz korelacji (cechy numeryczne)")
@@ -51,11 +51,11 @@ def perform_eda(data: pd.DataFrame) -> None:
 def preprocess_data(data: pd.DataFrame) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, StandardScaler, list]:
     logger.info("Rozdzielanie zmiennych X i y")
 
-    # Zakładamy, że target to ostatnia kolumna
+    
     X = data.drop(columns=["target"])
     y = data["target"]
 
-    # Usuwanie kolumn niemetrycznych (alternatywnie można je zakodować)
+   
     X_numeric = X.select_dtypes(include=[np.number])
 
     logger.info("Podział na zbiór treningowy i testowy")
@@ -83,7 +83,7 @@ def train_models(X_train: np.ndarray, y_train: np.ndarray) -> Tuple[RandomForest
 
 
 def tune_hyperparameters(model, param_grid: dict, X_train: np.ndarray, y_train: np.ndarray):
-    logging.info("Rozpoczynanie strojenia hiperparametrów (GridSearchCV)...")
+    logging.info("Start GridSearch")
     grid = GridSearchCV(model, param_grid, cv=3, scoring='accuracy', n_jobs=-1)
     grid.fit(X_train, y_train)
     logging.info(f"Najlepsze parametry: {grid.best_params_}")
@@ -91,7 +91,7 @@ def tune_hyperparameters(model, param_grid: dict, X_train: np.ndarray, y_train: 
 
 
 def evaluate_model(model, X_test: np.ndarray, y_test: np.ndarray, model_name: str) -> None:
-    logging.info(f"Ewaluacja modelu: {model_name}")
+    logging.info(f"Model Evaluation: {model_name}")
     y_pred = model.predict(X_test)
     acc = accuracy_score(y_test, y_pred)
     report = classification_report(y_test, y_pred)
@@ -101,7 +101,7 @@ def evaluate_model(model, X_test: np.ndarray, y_test: np.ndarray, model_name: st
 
 
 def plot_feature_importance(model, feature_names: list, model_name: str) -> None:
-    logging.info(f"Rysowanie istotności cech: {model_name}")
+    logging.info(f"Draw feature importance: {model_name}")
     try:
         if hasattr(model, "feature_importances_"):
             importances = model.feature_importances_
@@ -110,14 +110,14 @@ def plot_feature_importance(model, feature_names: list, model_name: str) -> None
 
             plt.figure(figsize=(10, 6))
             sns.barplot(x=importances[sorted_idx], y=sorted_features)
-            plt.title(f"Istotność cech: {model_name}")
+            plt.title(f"Feature importance: {model_name}")
             plt.tight_layout()
             plt.savefig(f"feature_importance_{model_name}.png")
             plt.close()
         else:
-            logging.warning(f"Model {model_name} nie wspiera feature_importances_.")
+            logging.warning(f"Model {model_name} is not using feature_importances_.")
     except Exception as e:
-        logging.error(f"Błąd podczas rysowania istotności cech: {e}")
+        logging.error(f"Error drawing feature importance: {e}")
 
 
 
@@ -128,7 +128,7 @@ def main(data_path: str) -> None:
 
     rf_model, gb_model = train_models(X_train, y_train)
 
-    # Hyperparameter tuning – przykład dla RandomForest
+    # Hyperparameter tuning – RF
     rf_params = {
         "n_estimators": [100, 200],
         "max_depth": [5, 10, None],
