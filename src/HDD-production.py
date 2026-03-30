@@ -178,4 +178,7 @@ def main(data_path: str) -> None:
 
 
 if __name__ == "__main__":
-    main(r"C:/Users/mgroch/OneDrive - Interpublic/Desktop/Other/HDD/heart.csv")
+    base_path = Path(__file__).resolve().parent.parent
+    data_path = base_path / "data" / "heart.csv"
+
+    main(str(data_path))
