@@ -69,6 +69,22 @@ Features:
 - ROC curve comparison
 - Interactive heart disease prediction for a new patient
 
+## MLflow Experiment Tracking
+
+The project uses MLflow to track experiments:
+
+- Random Forest (baseline)
+- Gradient Boosting
+- Random Forest (tuned with GridSearch)
+
+Tracked:
+- metrics (accuracy)
+- models
+- feature importance plots
+
+Run:
+mlflow ui
+
 ## How to Run the App
 
 1. Install dependencies:
