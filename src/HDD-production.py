@@ -48,8 +48,15 @@ def perform_eda(data: pd.DataFrame) -> None:
     sns.heatmap(numerical_data.corr(), annot=False, cmap="coolwarm")
     plt.title("Correlation matrix (Numerical features)")
     plt.tight_layout()
-    plt.savefig("correlation_heatmap.png")
+    output_path = Path("artifacts")
+    output_path.mkdir(exist_ok=True)
+
+    file_path = output_path / "correlation_heatmap.png"
+
+    plt.savefig(file_path)
     plt.close()
+
+    mlflow.log_artifact(str(file_path))
 
 
 
@@ -115,15 +122,21 @@ def plot_feature_importance(model, feature_names: list, model_name: str) -> None
         if hasattr(model, "feature_importances_"):
             importances = model.feature_importances_
             sorted_idx = np.argsort(importances)[::-1]
-            sorted_features = [feature_names[i] for i in sorted_idx]
+            sorted_features = np.array(feature_names)[sorted_idx]
+
+            output_path = Path("artifacts")
+            output_path.mkdir(exist_ok=True)
+
+            file_path = output_path / f"feature_importance_{model_name}.png"
 
             plt.figure(figsize=(10, 6))
             sns.barplot(x=importances[sorted_idx], y=sorted_features)
             plt.title(f"Feature importance: {model_name}")
             plt.tight_layout()
-            plt.savefig(f"feature_importance_{model_name}.png")
-            mlflow.log_artifact(f"feature_importance_{model_name}.png")
+            plt.savefig(file_path)
             plt.close()
+
+            mlflow.log_artifact(str(file_path))
         else:
             logging.warning(f"Model {model_name} is not using feature_importances_.")
     except Exception as e:
