@@ -19,31 +19,31 @@ logger = logging.getLogger(__name__)
 
 
 def load_data(path: str) -> pd.DataFrame:
-    logging.info(f"Wczytywanie danych z: {path}")
+    logging.info(f"Reading Data from: {path}")
     try:
         data = pd.read_csv(path)
-        logging.info(f"Wczytano {data.shape[0]} wierszy i {data.shape[1]} kolumn.")
+        logging.info(f"Read {data.shape[0]} rows and {data.shape[1]} columns.")
         return data
     except Exception as e:
-        logging.error(f"Błąd podczas wczytywania danych: {e}")
+        logging.error(f"Error while reading data: {e}")
         raise
 
 
 def perform_eda(data: pd.DataFrame) -> None:
-    logger.info("Eksploracyjna analiza danych (EDA)...")
+    logger.info("(EDA)...")
 
-    print("\n Podstawowe statystyki:\n", data.describe())
-    print("\n Braki danych:\n", data.isnull().sum())
+    print("\n Basic statistics:\n", data.describe())
+    print("\n NAs:\n", data.isnull().sum())
 
     numerical_data = data.select_dtypes(include=["number"])
 
-    print("\n Korelacje (top 10):\n", numerical_data.corr().abs().unstack()
+    print("\n Correlations (top 10):\n", numerical_data.corr().abs().unstack()
           .sort_values(ascending=False).drop_duplicates().head(10))
 
     # Correlation heatmap
     plt.figure(figsize=(12, 8))
     sns.heatmap(numerical_data.corr(), annot=False, cmap="coolwarm")
-    plt.title("Macierz korelacji (cechy numeryczne)")
+    plt.title("Correlation matrix (Numerical features)")
     plt.tight_layout()
     plt.savefig("correlation_heatmap.png")
     plt.close()
