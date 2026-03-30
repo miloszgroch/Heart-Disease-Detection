@@ -3,6 +3,8 @@ import numpy as np
 import logging
 import matplotlib.pyplot as plt
 import seaborn as sns
+import mlflow
+import mlflow.sklearn
 
 from pathlib import Path
 from typing import Tuple
