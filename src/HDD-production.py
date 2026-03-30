@@ -136,21 +136,45 @@ def main(data_path: str) -> None:
     perform_eda(data)
     X_train, X_test, y_train, y_test, scaler, feature_names = preprocess_data(data)
 
-    rf_model, gb_model = train_models(X_train, y_train)
+    # RANDOM FOREST BASELINE
+    with mlflow.start_run(run_name="RandomForest_baseline"):
+        rf_model = RandomForestClassifier(random_state=42)
+        rf_model.fit(X_train, y_train)
 
-    # Hyperparameter tuning – RF
+        evaluate_model(rf_model, X_test, y_test, "rf_baseline")
+        plot_feature_importance(rf_model, feature_names, "rf_baseline")
+
+        mlflow.sklearn.log_model(rf_model, "model")
+
+    # GRADIENT BOOSTING
+    with mlflow.start_run(run_name="GradientBoosting"):
+        gb_model = GradientBoostingClassifier(random_state=42)
+        gb_model.fit(X_train, y_train)
+
+        evaluate_model(gb_model, X_test, y_test, "gb")
+        plot_feature_importance(gb_model, feature_names, "gb")
+
+        mlflow.sklearn.log_model(gb_model, "model")
+
+    # TUNED RANDOM FOREST
     rf_params = {
         "n_estimators": [100, 200],
         "max_depth": [5, 10, None],
         "min_samples_split": [2, 5]
     }
-    rf_best = tune_hyperparameters(RandomForestClassifier(random_state=42), rf_params, X_train, y_train)
 
-    evaluate_model(rf_best, X_test, y_test, "Random Forest (tuned)")
-    plot_feature_importance(rf_best, feature_names, "RandomForest")
+    with mlflow.start_run(run_name="RandomForest_tuned"):
+        rf_best = tune_hyperparameters(
+            RandomForestClassifier(random_state=42),
+            rf_params,
+            X_train,
+            y_train
+        )
 
-    evaluate_model(gb_model, X_test, y_test, "Gradient Boosting")
-    plot_feature_importance(gb_model, feature_names, "GradientBoosting")
+        evaluate_model(rf_best, X_test, y_test, "rf_tuned")
+        plot_feature_importance(rf_best, feature_names, "rf_tuned")
+
+        mlflow.sklearn.log_model(rf_best, "model")
 
 
 if __name__ == "__main__":
