@@ -51,7 +51,7 @@ def perform_eda(data: pd.DataFrame) -> None:
 
 
 def preprocess_data(data: pd.DataFrame) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, StandardScaler, list]:
-    logger.info("Rozdzielanie zmiennych X i y")
+    logger.info("Split X i y")
 
     
     X = data.drop(columns=["target"])
@@ -60,10 +60,10 @@ def preprocess_data(data: pd.DataFrame) -> Tuple[np.ndarray, np.ndarray, np.ndar
    
     X_numeric = X.select_dtypes(include=[np.number])
 
-    logger.info("Podział na zbiór treningowy i testowy")
+    logger.info("Train, test split")
     X_train, X_test, y_train, y_test = train_test_split(X_numeric, y, test_size=0.2, random_state=42)
 
-    logger.info("Skalowanie cech")
+    logger.info("Scaling features")
     scaler = StandardScaler()
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
@@ -73,11 +73,11 @@ def preprocess_data(data: pd.DataFrame) -> Tuple[np.ndarray, np.ndarray, np.ndar
 
 
 def train_models(X_train: np.ndarray, y_train: np.ndarray) -> Tuple[RandomForestClassifier, GradientBoostingClassifier]:
-    logging.info("Trenowanie modelu Random Forest")
+    logging.info("Train Random Forest model")
     rf = RandomForestClassifier(random_state=42)
     rf.fit(X_train, y_train)
 
-    logging.info("Trenowanie modelu Gradient Boosting")
+    logging.info("Train Gradient Boosting model")
     gb = GradientBoostingClassifier(random_state=42)
     gb.fit(X_train, y_train)
 
@@ -88,7 +88,7 @@ def tune_hyperparameters(model, param_grid: dict, X_train: np.ndarray, y_train: 
     logging.info("Start GridSearch")
     grid = GridSearchCV(model, param_grid, cv=3, scoring='accuracy', n_jobs=-1)
     grid.fit(X_train, y_train)
-    logging.info(f"Najlepsze parametry: {grid.best_params_}")
+    logging.info(f"Best parameters: {grid.best_params_}")
     return grid.best_estimator_
 
 
