@@ -95,7 +95,7 @@ def tune_hyperparameters(model, param_grid: dict, X_train: np.ndarray, y_train: 
     return grid.best_estimator_
 
 
-def evaluate_model(model, X_test: np.ndarray, y_test: np.ndarray, model_name: str) -> None:
+def evaluate_model(model, X_test: np.ndarray, y_test: np.ndarray, model_name: str) -> float:
     logging.info(f"Model Evaluation: {model_name}")
     y_pred = model.predict(X_test)
     acc = accuracy_score(y_test, y_pred)
@@ -103,6 +103,10 @@ def evaluate_model(model, X_test: np.ndarray, y_test: np.ndarray, model_name: st
 
     logging.info(f"{model_name} Accuracy: {acc:.4f}")
     logging.info(f"{model_name} Classification Report:\n{report}")
+
+    mlflow.log_metric(f"{model_name}_accuracy", acc)
+
+    return acc
 
 
 def plot_feature_importance(model, feature_names: list, model_name: str) -> None:
