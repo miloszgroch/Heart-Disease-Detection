@@ -25,7 +25,9 @@ heart-disease-detection/
 ├── src/
 │   ├── train.py                                    
 ├── app/
-│   └── streamlit_app.py               
+│   └── streamlit_app.py
+├── artifacts/
+│   └── correlation_heatmap.png               
 ├── models/
 │   └── best_model.pkl               
 ├── requirements.txt                  
