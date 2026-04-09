@@ -150,7 +150,7 @@ def main(data_path: str) -> None:
     X_train, X_test, y_train, y_test, scaler, feature_names = preprocess_data(data)
 
     # RANDOM FOREST BASELINE
-    with mlflow.start_run(run_name="RandomForest_baseline"):
+    with mlflow.start_run(run_name="RandomForest_baseline", nested=True):
         rf_model = RandomForestClassifier(random_state=42)
         rf_model.fit(X_train, y_train)
 
