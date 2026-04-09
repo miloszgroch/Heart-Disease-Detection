@@ -23,11 +23,9 @@ heart-disease-detection/
 ├── notebooks/
 │   └── 01_heart_disease_analysis.ipynb  
 ├── src/
-│   ├── data.py                       
-│   ├── models.py                     
-│   └── visualizations.py             
+│   ├── train.py                                    
 ├── app/
-│   └── app.py               
+│   └── streamlit_app.py               
 ├── models/
 │   └── best_model.pkl               
 ├── requirements.txt                  
