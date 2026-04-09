@@ -160,7 +160,7 @@ def main(data_path: str) -> None:
         mlflow.sklearn.log_model(rf_model, "model")
 
     # GRADIENT BOOSTING
-    with mlflow.start_run(run_name="GradientBoosting"):
+    with mlflow.start_run(run_name="GradientBoosting", nested=True):
         gb_model = GradientBoostingClassifier(random_state=42)
         gb_model.fit(X_train, y_train)
 
