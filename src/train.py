@@ -200,6 +200,7 @@ def main(data_path: str) -> None:
         logger.info(f"Saved best model to {best_model_file}")
 
 
+
 if __name__ == "__main__":
     base_path = Path(__file__).resolve().parent.parent
     data_path = base_path / "data" / "heart.csv"
