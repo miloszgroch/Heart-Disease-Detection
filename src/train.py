@@ -176,7 +176,7 @@ def main(data_path: str) -> None:
         "min_samples_split": [2, 5]
     }
 
-    with mlflow.start_run(run_name="RandomForest_tuned"):
+    with mlflow.start_run(run_name="RandomForest_tuned", nested=True):
         rf_best = tune_hyperparameters(
             RandomForestClassifier(random_state=42),
             rf_params,
