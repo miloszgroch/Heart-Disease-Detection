@@ -189,6 +189,16 @@ def main(data_path: str) -> None:
 
         mlflow.sklearn.log_model(rf_best, "model")
 
+        # Save the best model locally
+        models_path = Path("models")
+        models_path.mkdir(exist_ok=True)  # utwórz folder jeśli nie istnieje
+
+        best_model_file = models_path / "best_model.pkl"
+
+        import joblib
+        joblib.dump(rf_best, best_model_file)
+        logger.info(f"Saved best model to {best_model_file}")
+
 
 if __name__ == "__main__":
     base_path = Path(__file__).resolve().parent.parent
