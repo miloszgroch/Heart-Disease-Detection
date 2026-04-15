@@ -146,7 +146,7 @@ mlflow ui
 1. **Data Loading**: Read the CSV dataset.
 2. **EDA**: Summary statistics, missing value check, correlation heatmap.
 3. **Preprocessing**: Split data into train/test, scale numerical features.
-4. **4. Model Training: Scaled vs Non-Scaled Models**: Train models on scaled features and compare their performance with scale-insensitive models
+4. **Model Training: Scaled vs Non-Scaled Models**: Train models on scaled features and compare their performance with scale-insensitive models
 5. **Hyperparameter Tuning**: Tune Random Forest using GridSearchCV.
 6. **Evaluation**: Accuracy, classification report.
 7. **Feature Importance**: Visualize feature contribution.
