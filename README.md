@@ -72,7 +72,7 @@ http://localhost:8501
 
 ---
 
-## How to Run
+## How to Run without Docker
 
 1. Clone the repository.
 2. Make sure Python 3.x is installed.
@@ -103,6 +103,21 @@ Features:
 - ROC curve comparison
 - Interactive heart disease prediction for a new patient
 
+
+1. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+2. Run the Streamlit app:
+```bash
+streamlit run app/streamlit_app.py
+```
+
+3. Open your browser at:
+http://localhost:8501
+
+
 ## MLflow Experiment Tracking
 
 The project uses MLflow to track experiments:
@@ -118,23 +133,6 @@ Tracked:
 
 Run:
 mlflow ui
-
-
-
-## How to Run the App
-
-1. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-2. Run the Streamlit app:
-```bash
-streamlit run app/streamlit_app.py
-```
-
-3. Open your browser at:
-http://localhost:8501
 
 ---
 
