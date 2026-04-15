@@ -10,7 +10,7 @@ This project aims to predict the presence of heart disease using clinical featur
 
 **Notebook:** `notebooks/01_heart_disease_analysis.ipynb`
 
-**Dashboard:** Streamlit app in `app/app.py`  
+**Dashboard:** Streamlit app in `app/streamlit_app.py`  
 
 ---
 
