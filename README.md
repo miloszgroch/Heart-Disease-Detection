@@ -62,19 +62,26 @@ jupyter notebook notebooks/01_heart_disease_analysis.ipynb
 
 This project can be easily run using Docker, ensuring a consistent environment.
 
-### 1. Build the Docker image
+### 1. Clone repository
+
+```bash
+git clone https://github.com/miloszgroch/Heart-Disease-Detection.git
+cd Heart-Disease-Detection
+```
+
+### 2. Build the Docker image
 
 ```bash
 docker build -t heart-disease-app .
 ```
 
-### 2. Run the container
+### 3. Run the container
 
 ```bash
 docker run -p 8501:8501 heart-disease-app
 ```
 
-### 3. Open the app
+### 4. Open the app
 
 Go to:
 http://localhost:8501
