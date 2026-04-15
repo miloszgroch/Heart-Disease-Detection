@@ -37,26 +37,9 @@ heart-disease-detection/
 
 ```
 
+
+
 ---
-
-## How to Run
-
-1. Clone the repository.
-2. Make sure Python 3.x is installed.
-3. Install required packages:
-
-```bash
-pip install -r requirements.txt
-```
-
-4. Open the notebook:
-
-```bash
-jupyter notebook notebooks/01_heart_disease_analysis.ipynb
-```
-
-5. Follow the notebook cells step by step.
-
 
 ## 🐳 Run with Docker
 
@@ -85,6 +68,27 @@ docker run -p 8501:8501 heart-disease-app
 
 Go to:
 http://localhost:8501
+
+
+---
+
+## How to Run
+
+1. Clone the repository.
+2. Make sure Python 3.x is installed.
+3. Install required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Open the notebook:
+
+```bash
+jupyter notebook notebooks/01_heart_disease_analysis.ipynb
+```
+
+5. Follow the notebook cells step by step.
 
 ## Streamlit Web Application
 
