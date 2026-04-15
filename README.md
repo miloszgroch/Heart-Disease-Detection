@@ -9,6 +9,8 @@ This project aims to predict the presence of heart disease using clinical featur
 Heart disease is one of the leading causes of death worldwide.
 This project aims to assist in early detection using machine learning models trained on clinical data.
 
+---
+
 **Dataset:** Kaggle Heart Disease Dataset
 
 **Models:** Random Forest, Gradient Boosting
