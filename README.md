@@ -57,6 +57,28 @@ jupyter notebook notebooks/01_heart_disease_analysis.ipynb
 
 5. Follow the notebook cells step by step.
 
+
+## 🐳 Run with Docker
+
+This project can be easily run using Docker, ensuring a consistent environment.
+
+### 1. Build the Docker image
+
+```bash
+docker build -t heart-disease-app .
+```
+
+### 2. Run the container
+
+```bash
+docker run -p 8501:8501 heart-disease-app
+```
+
+### 3. Open the app
+
+Go to:
+http://localhost:8501
+
 ## Streamlit Web Application
 
 An interactive Streamlit application is included to present the project results
@@ -86,6 +108,8 @@ Tracked:
 Run:
 mlflow ui
 
+
+
 ## How to Run the App
 
 1. Install dependencies:
@@ -95,7 +119,7 @@ pip install -r requirements.txt
 
 2. Run the Streamlit app:
 ```bash
-streamlit run app.py
+streamlit run app/streamlit_app.py
 ```
 
 3. Open your browser at:
