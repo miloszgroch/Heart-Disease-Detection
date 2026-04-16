@@ -41,6 +41,13 @@ heart-disease-detection/
 ├── README.md
 ├── Dockerfile
 └── .gitignore
+```
+
+<br>
+
+---
+
+<br>
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
