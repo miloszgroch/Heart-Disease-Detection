@@ -9,7 +9,7 @@ This project aims to predict the presence of heart disease using clinical featur
 Heart disease is one of the leading causes of death worldwide.
 This project aims to assist in early detection using machine learning models trained on clinical data.
 
----
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 **Dataset:** Kaggle Heart Disease Dataset
 
@@ -19,7 +19,7 @@ This project aims to assist in early detection using machine learning models tra
 
 **Dashboard:** Streamlit app in `app/streamlit_app.py`  
 
----
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ## Project Structure
 
@@ -42,11 +42,7 @@ heart-disease-detection/
 ├── Dockerfile
 └── .gitignore
 
-<br>
-
----
-
-<br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ## 📊 Results
 
@@ -94,11 +90,7 @@ The most influential features for prediction include:
 
 These features align well with known clinical indicators of heart disease.
 
-<br>
-
----
-
-<br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ## 🐳 Run with Docker
 
@@ -129,12 +121,7 @@ Go to:
 http://localhost:8501
 
 
-<br>
-
----
-
-<br>
-
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## How to Run without Docker
 
 1. Clone the repository.
@@ -153,11 +140,7 @@ jupyter notebook notebooks/01_heart_disease_analysis.ipynb
 
 5. Follow the notebook cells step by step.
 
-<br>
-
----
-
-<br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ## Streamlit Web Application
 
@@ -186,11 +169,7 @@ streamlit run app/streamlit_app.py
 3. Open your browser at:
 http://localhost:8501
 
-<br>
-
----
-
-<br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 
 ## MLflow Experiment Tracking
@@ -208,11 +187,11 @@ Tracked:
 
 Run:
 mlflow ui
-<br>
 
----
 
-<br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
 ## Key Steps in Notebook/Dashboard
 
 1. **Data Loading**: Read the CSV dataset.
@@ -224,11 +203,9 @@ mlflow ui
 7. **Feature Importance**: Visualize feature contribution.
 8. **Summary & Insights**: Key results and possible improvements.
 
-<br>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
----
 
-<br>
 ## Possible Extensions
 
 * ROC AUC and confusion matrix visualizations.
@@ -236,10 +213,9 @@ mlflow ui
 * Use SHAP or LIME for model explainability.
 * Cross-validation for robust evaluation.
 
-<br>
 
----
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-<br>
+
 **Author:** Miłosz Groch
 **Date:** 2026-01-27
