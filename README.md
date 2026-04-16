@@ -43,7 +43,7 @@ heart-disease-detection/
 └── .gitignore
 
 ```
-![divider](https://via.placeholder.com/800x3/3b82f6/3b82f6)
+![divider](https://via.placeholder.com/800x3/ef4444/ef4444)
 
 ## 📊 Results
 
@@ -92,7 +92,7 @@ The most influential features for prediction include:
 These features align well with known clinical indicators of heart disease.
 
 ---
-![divider](https://via.placeholder.com/800x3/3b82f6/3b82f6)
+![divider](https://via.placeholder.com/800x3/ef4444/ef4444)
 
 ## 🐳 Run with Docker
 
