@@ -261,7 +261,7 @@ mlflow ui
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 <br>
-
+![footer](https://capsule-render.vercel.app/api?type=waving&color=ff4d4d&height=120&section=footer)
 
 
 **Author:** Miłosz Groch
