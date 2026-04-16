@@ -43,7 +43,7 @@ heart-disease-detection/
 └── .gitignore
 
 ```
-<hr style="border: 1px solid #60a5fa;">
+<hr style="border: 1px solid #ef4444;">
 
 ## 📊 Results
 
