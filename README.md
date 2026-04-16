@@ -44,9 +44,55 @@ heart-disease-detection/
 
 ```
 
+## 📊 Results
 
+The models were evaluated on a held-out test set (20% of the data, 205 samples).
+
+### 🏆 Best Model: Random Forest (Tuned)
+
+- **Accuracy:** 0.985  
+- **Precision (class 1):** 1.00  
+- **Recall (class 1):** 0.97  
+- **F1-score:** 0.99  
+
+The tuned Random Forest model achieved the best performance, with near-perfect classification results and a strong balance between precision and recall.
 
 ---
+
+### 📈 Model Comparison
+
+| Model                     | Accuracy | Precision (avg) | Recall (avg) | F1-score (avg) |
+|--------------------------|----------|-----------------|--------------|----------------|
+| Random Forest (baseline) | 0.985    | 0.99            | 0.99         | 0.99           |
+| Gradient Boosting        | 0.932    | 0.93            | 0.93         | 0.93           |
+| Random Forest (tuned)    | 0.985    | 0.99            | 0.99         | 0.99           |
+
+---
+
+### 🔍 Key Insights
+
+- Random Forest significantly outperformed Gradient Boosting on this dataset.
+- Hyperparameter tuning did not improve accuracy further, indicating that the baseline model was already well-fitted.
+- The model shows **very high predictive performance**, but this may suggest:
+  - potential dataset simplicity
+  - or slight risk of overfitting
+
+---
+
+### 🧠 Feature Importance
+
+The most influential features for prediction include:
+- `oldpeak` (ST depression)
+- `cp` (chest pain type)
+- `thalach` (maximum heart rate achieved)
+- `ca` (number of major vessels)
+- `exang` (exercise-induced angina)
+
+These features align well with known clinical indicators of heart disease.
+
+---
+
+______
 
 ## 🐳 Run with Docker
 
