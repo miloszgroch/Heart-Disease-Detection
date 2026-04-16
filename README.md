@@ -262,11 +262,11 @@ mlflow ui
 
 <br>
 
-![header](https://capsule-render.vercel.app/api?type=waving&color=ff4d4d&height=120&section=header)
+
 
 ![footer](https://capsule-render.vercel.app/api?type=waving&color=ff4d4d&height=120&section=footer)
 
-![header](https://capsule-render.vercel.app/api?type=waving&color=ff6b6b&height=100&section=header)
+
 
 **Author:** Miłosz Groch
 **Date:** 2026-01-27
